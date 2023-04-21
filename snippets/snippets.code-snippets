@@ -1,0 +1,68 @@
+{
+    "AM View Controller": {
+        "prefix": "amcontroller",
+        "body": [
+            "class ${1:MyController} extends AmController<${2:MyModel}> {",
+            "  ${1:MyController}(super.model);",
+            "",
+            "  // use the command 'refresh();' inside functions to update the view widget",
+            "  // ---------------------------------------------------------------------------",
+            "  @override",
+            "  void onDispose() {}",
+            "",
+            "  @override",
+            "  void onInit() {}",
+            "}",
+        ],
+        "description": "Creates a view Controller"
+    },
+    "AM view Widget": {
+        "prefix": "amviewwidget",
+        "body": [
+            "class ${1:MyViewWidget} extends AmViewWidget<${2:MyController}> {",
+            "  const ${1:MyViewWidget}({super.key});",
+            "",
+            "  @override",
+            "  Widget build(BuildContext context, am) {",
+            "    return Container();",
+            "  }",
+            "",
+            "  @override",
+            "  get config => ${2:MyController}(${3:MyModel}());",
+            "}",
+        ],
+        "description": "Creates a view widget"
+    },
+    "AM Model": {
+        "prefix": "ammodel",
+        "body": [
+            "class ${1:MyModel} {",
+            "//------------[Write properties here]------------",
+            "}",
+        ],
+        "description": "Creates a Model"
+    },
+    "AM Channel": {
+        "prefix": "amchannel",
+        "body": [
+            "var ${1:channelName} = AmChannel<${2:type}>.of('/${3:routeName}');",
+        ],
+        "description": "Get the channel of a specific route"
+    },
+    "AM Function Trigger": {
+        "prefix": "amfunctiontrigger",
+        "body": [
+            "var ${1:funcTrigger} = AmFunctionTrigger(",
+            "  amDataProvider: ${2:amDataProvider}, ",
+            "  function: (data){",
+            "    // --------[Something to do when provider getting data changed]--------",
+            "    ${3:function_body;}",
+            "  },",
+            ");",
+            "",
+            "// -----------------you must use this line in somewhere-------------------",
+            "${1:funcTrigger}.start;",
+        ],
+        "description": "Creates a function trigger that invokes the function giving the new data in the provider"
+    },
+}

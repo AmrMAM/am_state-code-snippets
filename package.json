@@ -1,0 +1,26 @@
+{
+  "name": "am-state",
+  "displayName": "am_state",
+  "description": "Code Snippets that help you to use the state management [am_state] lib",
+  "version": "3.5.0",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "dart",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  },
+  "author": "Amr Mostafa",
+  "publisher": "Amr-MAM",
+  "icon": "./logo.png",
+  "repository": {
+    "url": "https://github.com/AmrMAM/am_state-code-snippets.git"
+  }
+}
